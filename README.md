@@ -41,4 +41,39 @@ sudo apt-get install python-opencv
 #### Detect and recognize faces from video camera-
 ![Result](https://github.com/aakashjhawar/face-recognition-using-opencv/blob/master/images/output1.png)
 
+## How to run (quick start)
+
+1. Create and activate a Python virtual environment (Windows PowerShell):
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+2. Install dependencies:
+
+```powershell
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+3. Create or place your dataset in the `dataset/` folder (one subfolder per person). See existing `dataset/` structure for example.
+
+4. Extract embeddings and train:
+
+```powershell
+python extract_embeddings.py
+python train_model.py
+```
+
+5. Run recognition on a camera or video:
+
+```powershell
+python recognize_video.py
+```
+
+Notes:
+- Large model files (for example `yolov8n.pt`, `openface_nn4.small2.v1.t7`) and dataset/output folders are tracked using Git LFS in this repository. If you clone the repo you will need Git LFS installed to pull these files.
+- To install Git LFS on Windows: https://git-lfs.github.com/ and then run `git lfs install`.
+
 
